@@ -7,6 +7,10 @@ const jsonParser = bodyParser.json()
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send("Hello World");
+})
+
 app.post('/getImage', jsonParser, async (req, res)=>{
     const {url} = req.body;
     const image = await getImage(url);
