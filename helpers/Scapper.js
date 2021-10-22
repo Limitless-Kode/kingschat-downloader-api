@@ -1,19 +1,19 @@
-// const puppeteer = require("puppeteer");
-const chromium = require("'chrome-aws-lambda'");
+const puppeteer = require("puppeteer");
+// const chromium = require("'chrome-aws-lambda'");
 
 const getImage = async (url) => {
-    // const browser = await puppeteer.launch({'args' : [
-    // '--no-sandbox',
-    // '--disable-setuid-sandbox'
-    // ]
-    // });
-    const browser = await chromium.puppeteer.launch({
-        args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: true,
-        ignoreHTTPSErrors: true,
+    const browser = await puppeteer.launch({'args' : [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+        ]
     });
+    // const browser = await chromium.puppeteer.launch({
+    //     args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+    //     defaultViewport: chromium.defaultViewport,
+    //     executablePath: await chromium.executablePath,
+    //     headless: true,
+    //     ignoreHTTPSErrors: true,
+    // });
     const page = await browser.newPage();
     await page.goto(url);
 
