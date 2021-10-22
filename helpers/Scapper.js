@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+// const puppeteer = require("puppeteer");
 const chromium = require("'chrome-aws-lambda'");
 
 const getImage = async (url) => {
