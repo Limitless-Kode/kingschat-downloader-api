@@ -6,7 +6,8 @@ const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json();
 
 app.use(cors({
-    origin: '*'
+  origin: '*',
+  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
 app.get('/', (req, res) => {
