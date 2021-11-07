@@ -7,7 +7,7 @@ const jsonParser = bodyParser.json();
 
 app.use(cors({
   origin: '*',
-  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH','OPTIONS']
 }));
 
 app.get('/', (req, res) => {
